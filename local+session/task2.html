@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Subject</label>
+      <input type="text" required id="Subject" />
+      <br /><br />
+      <label>Description</label>
+      <input type="text" required / id="Description">
+      <br /><br />
+      <label>User Types</label>
+      <input type="text" required / id="user">
+      <br /><br />
+      <label>Technology used</label>
+      <input type="text" required / id="Technology">
+      <br /><br />
+      <button id="btn">submit</button>
+    </form>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener('click',function (){
+    let subject = document.getElementById("Subject").value;
+    let Description = document.getElementById("Description").value;
+    let UserTypes = document.getElementById("user").value;
+    let Technologyused = document.getElementById("Technology").value;
+
+    sessionStorage.setItem("Subject", subject);
+    sessionStorage.setItem("Description", Description);
+    sessionStorage.setItem("user", UserTypes);
+    sessionStorage.setItem("Technology", Technologyused);
+
+
+  });
+</script>

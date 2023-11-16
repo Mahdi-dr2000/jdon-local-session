@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Name</label>
+      <input type="text" required / id="name">
+      <label>Email</label>
+      <input type="text" required / id="email">
+      <label>Mobile</label>
+      <input type="text" required / id="mobile">
+
+      <button id="btn">click on me to print</button>
+
+      _______________________________________________________________________________________________________________________________________________________________________________
+      <div id="nameprint"></div>
+      <div id="emailprint"></div>
+      <div id="passwordprint"></div>
+
+      <br /><br /><br />
+      <br /><br /><br />
+      <br /><br /><br />
+      <br /><br /><br />
+      <table border="solid" id="tbl"></table>
+    </form>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+
+    document.getElementById("nameprint").innerText= name;
+    document.getElementById("emailprint").innerText = email;
+    document.getElementById("passwordprint").innerText = mobile;
+
+    let table = document.getElementById("tbl");
+    let newrow = table.insertRow();
+    let cell1 = newrow.insertCell(0);
+    let cell2 = newrow.insertCell(1);
+    let cell3 = newrow.insertCell(2);
+
+    cell1.innerHTML = name;
+    cell2.innerHTML = email;
+    cell3.innerHTML = mobile;
+  });
+</script>

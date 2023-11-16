@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <label>Your name</label>
+      <input type="text" required />
+      <br /><br />
+
+      <label>Your Age</label>
+      <input type="text" required />
+      <br /><br />
+
+      <label> male </label>
+      <input type="radio" name="gender" />
+      <label> female </label>
+      <input type="radio" name="gender" />
+
+      <br />
+
+      <br />
+      <label>Brief Description</label>
+      <textarea required></textarea>
+
+      <br /><br />
+
+      <label>Your major and university </label>
+      <input type="text" required />
+
+      <br /><br />
+      <label
+        >Programming Language you prefer minimum 3 languages with the
+        checklist</label
+      >
+      <br /><br />
+      <label>java</label>
+      <input type="checkbox" / class="checkbox">
+      <label>js</label>
+      <input type="checkbox" / class="checkbox">
+      <label>php</label>
+      <input type="checkbox" / class="checkbox">
+      <label>python</label>
+      <input type="checkbox" / class="checkbox">
+      <label>go</label>
+      <input type="checkbox" / class="checkbox">
+
+      <button type="submit" id="btn">submit</button>
+    </form>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", function () {
+    checkbox = document.querySelectorAll("input[type='checkbox']");
+    cheked = 0;
+    let date = new Date();
+   
+
+    checkbox.forEach((checkbox) => {
+      if (checkbox.checked) {
+        cheked++;
+      }
+    });
+    if (cheked < 3) {
+      alert("You must choose at least three programming languages");
+    } else {
+        localStorage.setItem('Form filling date',date);
+        document.getElementById("form").submit();
+    }
+  });
+</script>

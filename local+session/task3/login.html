@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Email</label>
+      <input type="email" required id="email" />
+
+      <br /><br />
+
+      <label>Password</label>
+      <input type="password" required id="password" />
+      <button id="btn">login</button>
+    </form>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", function () {
+    email = document.getElementById("email").value;
+    password = document.getElementById("password").value;
+
+    let emaillocal = localStorage.getItem("email");
+    let passwordlocal = localStorage.getItem("password");
+    let name = localStorage.getItem("name");
+
+    if (email == emaillocal && password == passwordlocal) {
+      alert("welcome" + name);
+    } else {
+      alert("worng email or password");
+    }
+  });
+</script>
